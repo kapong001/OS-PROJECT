@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const port = 8080
+const port = 3000 
 
 app.use(cors())
 app.use(express.json());
@@ -27,14 +27,12 @@ app.post('/users/create', async(req, res) => {
     id: parseInt(user.id),
     fname: user.fname,
     lname: user.lname,
-    username: user.username,
-    email: user.email,
-    avatar: user.avatar
+    party: user.party,
   });
   await client.close();
   res.status(200).send({
     "status": "ok",
-    "message": "User with ID = "+user.id+" is created",
+    "message": "รหัสนักศึกษา "+user.id+" ลงทะเบียนสำเร็จ ฝ่าย "+ user.party,
     "user": user
   });
 })
@@ -69,14 +67,12 @@ app.put('/users/update', async(req, res) => {
       id: parseInt(user.id),
       fname: user.fname,
       lname: user.lname,
-      username: user.username,
-      email: user.email,
-      avatar: user.avatar
+      party: user.party,
     }});
     await client.close();
     res.status(200).send({
       "status": "ok",
-      "message": "User with ID = "+id+" is updated",
+      "message": "รหัสนักศึกษา "+id+" แก้ไขสำเร็จ",
       "user": user
     });
   })
@@ -89,6 +85,6 @@ app.delete('/users/delete', async(req, res) => {
     await client.close();
     res.status(200).send({
       "status": "ok",
-      "message": "User with ID = "+id+" is deleted"
+      "message": "รหัสนักศึกษา "+id+" ถูกลบ"
     });
   })
