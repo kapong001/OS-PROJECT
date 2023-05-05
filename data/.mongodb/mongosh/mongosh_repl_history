@@ -1,0 +1,25 @@
+ping
+show users
+show user
+db.admin.find()
+db.find()
+use admin
+db.auth('myUserAdmin', 'myUserAdmin')
+use admin
+db.users.find()
+show dbs
+db.users.insertOne({fname: "massliam"})
+db.myFirstCollection.insertOne({fname: "massliam"})
+db.users.find()
+db.myFirstCollection.insert({fname: "massliam"})
+db.users.find()
+db.users.insertOne({ fname: "John" })
+db.users.find()
+use test
+db.users.find()
+db.test.find()sers.find()
+db.users.insertOne({ fname: "John" })
+db.users.find()
+use test
+db.users.find()
+db.test.find()
